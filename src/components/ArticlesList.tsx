@@ -25,9 +25,9 @@ export default function ArticlesList(){
         <Container>
             <Row className="justify-content-start d-flex gy-4">
         {
-            articles.map((article,i)=>{
+            articles.map((article)=>{
             return(
-            <Col className="justify-content-center d-flex" md={4} xs={12} key={i}>
+            <Col className="justify-content-center d-flex" md={4} xs={12} key={article.id}>
               <ArticleComponent article={article} clickable={true}/>
               </Col>)
             })
