@@ -4,10 +4,14 @@ import { Article } from "../interfaces/article";
 import {useParams} from 'react-router-dom'
 import { Container, Row, Col } from "react-bootstrap";
 
+type ArticleId = {
+    id:string
+}
+
 export default function ArticleDetails(){
 
     const [article,setArticle] = useState<Article|null>(null);
-    const { id } = useParams();
+    const { id } = useParams<ArticleId>();
     useEffect(()=>{
         fetch('https://api.spaceflightnewsapi.net/v4/articles/'+id)
         .then(response =>{
